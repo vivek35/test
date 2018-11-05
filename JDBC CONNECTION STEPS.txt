@@ -1,0 +1,20 @@
+JDBC Connection Steps:
+
+		String url = "jdbc:mysql://localhost:3306/park";
+		String root = "root";
+		String pass = 	;
+		String Query = "select * from ride";
+		//Load and Register driver
+		Class.forName("com.mysql.jdbc.Driver");
+		//Create Connection
+		Connection connection = DriverManager.getConnection(url, root, pass);
+		//Create Statement
+		Statement statement = connection.createStatement();
+		//Execute the query
+		ResultSet rs = statement.executeQuery(Query);
+		rs.next();
+		//Process the results
+		System.out.println("Connected");
+		//Close connection
+		statement.close();
+		connection.close();
